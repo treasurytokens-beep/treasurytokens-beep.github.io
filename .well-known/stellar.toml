@@ -1,0 +1,44 @@
+VERSION="2.0.0"
+NETWORK_PASSPHRASE="Public Global Stellar Network ; September 2015"
+
+ACCOUNTS=[
+  "GANSNG7S5WFEKHXEFY2QYCZUP6VSRLKKYRXJ63QMNXT4N5MXP2DLICD5"
+]
+
+[DOCUMENTATION]
+ORG_NAME="TREASURY"
+ORG_URL="https://treasurytokens-beep.github.io/"
+ORG_DESCRIPTION="Treasury is an independent digital asset project issuing tokens on the Stellar network."
+
+[[CURRENCIES]]
+code="Tnote1x"
+issuer="GANSNG7S5WFEKHXEFY2QYCZUP6VSRLKKYRXJ63QMNXT4N5MXP2DLICD5"
+status="live"
+display_decimals=5
+name="Treasury Note 1X"
+desc="Tnote1x is a Treasury digital asset issued on the Stellar network."
+image="https://treasurytokens-beep.github.io/4b0726aa-c1f1-46df-97ab-322d2f8ab2ea.png"
+fixed_number=1000000000
+is_asset_anchored=false
+
+[[CURRENCIES]]
+code="Tnote2x"
+issuer="GANSNG7S5WFEKHXEFY2QYCZUP6VSRLKKYRXJ63QMNXT4N5MXP2DLICD5"
+status="live"
+display_decimals=7
+name="Treasury Note 2X"
+desc="Tnote2x is a Treasury digital asset issued on the Stellar network."
+image="https://treasurytokens-beep.github.io/4b0726aa-c1f1-46df-97ab-322d2f8ab2ea.png"
+fixed_number=100000000000
+is_asset_anchored=false
+
+[[CURRENCIES]]
+code="Tnote3x"
+issuer="GANSNG7S5WFEKHXEFY2QYCZUP6VSRLKKYRXJ63QMNXT4N5MXP2DLICD5"
+status="live"
+display_decimals=7
+name="Treasury Note 3X"
+desc="Tnote3x is a Treasury digital asset issued on the Stellar network."
+image="https://treasurytokens-beep.github.io/4b0726aa-c1f1-46df-97ab-322d2f8ab2ea.png"
+fixed_number=100000000000
+is_asset_anchored=false
