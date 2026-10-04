@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Treasury | Digital Treasury Assets</title>
+
+<meta name="description"
+content="Treasury is an independent digital treasury asset project built on the Stellar network.">
+
+<meta name="theme-color" content="#071f3d">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f5f7;
+    color:#18212b;
+}
+
+/* =========================
+   TOP GOVERNMENT STYLE BAR
+========================= */
+
+.govbar{
+    background:#071f3d;
+    color:white;
+    padding:9px 6%;
+    font-size:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.govbar span{
+    opacity:.9;
+}
+
+.govlinks{
+    display:flex;
+    gap:22px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:white;
+    border-bottom:1px solid #d7dce2;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.header-main{
+    padding:18px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.seal{
+    width:66px;
+    height:66px;
+    border-radius:50%;
+    background:
+        radial-gradient(circle,#d9b45a 0 22%,#12385f 23% 48%,#e4c46d 49% 53%,#082542 54%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    color:white;
+    font-size:13px;
+    border:3px solid #c6a24d;
+    box-shadow:0 3px 12px #0002;
+}
+
+.brand-text h1{
+    font-family:Georgia,serif;
+    font-size:30px;
+    color:#0b2c50;
+}
+
+.brand-text p{
+    font-size:11px;
+    color:#66717d;
+    letter-spacing:1.4px;
+    text-transform:uppercase;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+    align-items:center;
+}
+
+nav a{
+    text-decoration:none;
+    color:#253746;
+    font-size:14px;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#0c5b9e;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:650px;
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(90deg,
+        rgba(4,28,55,.96),
+        rgba(4,28,55,.80),
+        rgba(4,28,55,.35)),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/United%20States%20Treasury%20Building%20Washington%20DC.jpg")
+        center/cover;
+    color:white;
+}
+
+.hero-inner{
+    width:88%;
+    max-width:1300px;
+    margin:auto;
+    padding:125px 0;
+}
+
+.hero-label{
+    text-transform:uppercase;
+    letter-spacing:3px;
+    color:#e2c36a;
+    font-size:13px;
+    margin-bottom:22px;
+}
+
+.hero h2{
+    font-family:Georgia,serif;
+    font-size:clamp(48px,7vw,90px);
+    line-height:1;
+    max-width:850px;
+    margin-bottom:28px;
+}
+
+.hero p{
+    max-width:700px;
+    line-height:1.8;
+    color:#e4ebf3;
+    font-size:18px;
+}
+
+.hero-buttons{
+    margin-top:35px;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 25px;
+    text-decoration:none;
+    font-weight:bold;
+    display:inline-block;
+}
+
+.btn-gold{
+    background:#d4b35c;
+    color:#071f3d;
+}
+
+.btn-outline{
+    border:1px solid white;
+    color:white;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    background:white;
+    padding:70px 7%;
+}
+
+.intro-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:60px;
+}
+
+.section-label{
+    color:#8b6a20;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+h2{
+    font-family:Georgia,serif;
+    font-size:42px;
+    color:#092b4e;
+    margin-bottom:20px;
+}
+
+.intro p{
+    color:#52606d;
+    line-height:1.9;
+    font-size:16px;
+}
+
+.factbox{
+    background:#eef2f6;
+    border-left:5px solid #c7a34d;
+    padding:30px;
+}
+
+.factbox h3{
+    color:#092b4e;
+    font-family:Georgia,serif;
+    font-size:23px;
+    margin-bottom:15px;
+}
+
+.fact{
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid #d4d9df;
+    padding:14px 0;
+    font-size:13px;
+}
+
+.fact strong{
+    color:#123d64;
+}
+
+/* =========================
+   TREASURY ASSETS
+========================= */
+
+.assets{
+    padding:90px 7%;
+    background:#f0f2f4;
+}
+
+.assets-head{
+    max-width:1200px;
+    margin:auto;
+    margin-bottom:40px;
+}
+
+.asset-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.asset-card{
+    background:white;
+    border-top:6px solid #0a3157;
+    padding:35px;
+    box-shadow:0 7px 25px #12263a12;
+    transition:.25s;
+}
+
+.asset-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px #12263a20;
+}
+
+.asset-number{
+    color:#a17e25;
+    font-size:11px;
+    letter-spacing:2px;
+    font-weight:bold;
+}
+
+.asset-card h3{
+    font-family:Georgia,serif;
+    color:#092b4e;
+    font-size:31px;
+    margin:15px 0;
+}
+
+.asset-card p{
+    color:#61707e;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.asset-info{
+    margin-top:25px;
+    padding-top:18px;
+    border-top:1px solid #e1e4e7;
+    font-size:12px;
+    color:#6d7883;
+    word-break:break-all;
+}
+
+.asset-btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#0a3157;
+    color:white;
+    padding:11px 17px;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* =========================
+   WASHINGTON / SYMBOL
+========================= */
+
+.symbol-section{
+    min-height:540px;
+    background:
+        linear-gradient(90deg,
+        rgba(5,25,45,.97),
+        rgba(5,25,45,.75)),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/White%20House%20Washington%20DC.jpg")
+        center/cover;
+    color:white;
+    display:flex;
+    align-items:center;
+}
+
+.symbol-inner{
+    width:86%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.symbol-inner h2{
+    color:white;
+    max-width:700px;
+}
+
+.symbol-inner p{
+    max-width:700px;
+    line-height:1.9;
+    color:#d6e0ea;
+}
+
+.symbol-mark{
+    width:130px;
+    height:130px;
+    margin-bottom:30px;
+    border:2px solid #d5b45c;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:Georgia,serif;
+    color:#e1c36d;
+    text-align:center;
+    padding:15px;
+}
+
+/* =========================
+   HISTORY
+========================= */
+
+.history{
+    padding:90px 7%;
+    background:white;
+}
+
+.history-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+.timeline{
+    border-left:3px solid #c9a64d;
+    padding-left:28px;
+}
+
+.timeline-item{
+    margin-bottom:35px;
+}
+
+.timeline-year{
+    color:#9a7625;
+    font-weight:bold;
+    font-size:13px;
+    letter-spacing:2px;
+}
+
+.timeline h3{
+    margin:8px 0;
+    color:#0a3157;
+    font-family:Georgia,serif;
+}
+
+.timeline p{
+    color:#66737f;
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* =========================
+   PRESIDENTS
+========================= */
+
+.leadership{
+    padding:90px 7%;
+    background:#eef1f4;
+}
+
+.leadership-head{
+    max-width:1200px;
+    margin:auto;
+    margin-bottom:40px;
+}
+
+.president-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+}
+
+.president{
+    background:white;
+    box-shadow:0 5px 20px #00000010;
+}
+
+.president img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    object-position:top;
+    filter:grayscale(12%);
+}
+
+.president-info{
+    padding:18px;
+}
+
+.president-info h3{
+    font-family:Georgia,serif;
+    color:#092b4e;
+    font-size:17px;
+}
+
+.president-info span{
+    color:#8a6c27;
+    font-size:11px;
+    text-transform:uppercase;
+}
+
+/* =========================
+   MARKET
+========================= */
+
+.market{
+    padding:90px 7%;
+    background:#071f3d;
+    color:white;
+}
+
+.market-head{
+    max-width:1200px;
+    margin:auto;
+    margin-bottom:35px;
+}
+
+.market-head h2{
+    color:white;
+}
+
+.market-head p{
+    color:#aebdcd;
+}
+
+.market-table{
+    max-width:1200px;
+    margin:auto;
+    background:white;
+    color:#172534;
+    overflow:hidden;
+}
+
+.market-row{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    padding:18px 24px;
+    border-bottom:1px solid #e1e5e9;
+    align-items:center;
+}
+
+.market-row.head{
+    background:#d7b65e;
+    font-weight:bold;
+    color:#10263e;
+}
+
+.coin{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    font-weight:bold;
+}
+
+.coin-icon{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#0b3157;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+}
+
+.change-up{
+    color:#16834a;
+    font-weight:bold;
+}
+
+.change-down{
+    color:#b23b3b;
+    font-weight:bold;
+}
+
+/* =========================
+   DATA CENTER
+========================= */
+
+.data{
+    padding:90px 7%;
+    background:white;
+}
+
+.data-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.data-card{
+    border:1px solid #dce1e5;
+    padding:28px;
+    background:#fafbfc;
+}
+
+.data-card h3{
+    font-family:Georgia,serif;
+    color:#092b4e;
+    margin-bottom:12px;
+}
+
+.data-card p{
+    color:#697783;
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* =========================
+   DISCLAIMER
+========================= */
+
+.disclaimer{
+    background:#e9edf1;
+    padding:35px 7%;
+    text-align:center;
+}
+
+.disclaimer p{
+    max-width:900px;
+    margin:auto;
+    color:#63717d;
+    font-size:12px;
+    line-height:1.8;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#041527;
+    color:#aab7c4;
+    padding:55px 7% 30px;
+}
+
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:50px;
+}
+
+footer h3{
+    color:white;
+    font-family:Georgia,serif;
+    margin-bottom:18px;
+}
+
+footer a{
+    display:block;
+    color:#aab7c4;
+    text-decoration:none;
+    margin:9px 0;
+    font-size:13px;
+}
+
+.issuer{
+    margin-top:25px;
+    padding:18px;
+    background:#071f36;
+    border:1px solid #173958;
+    word-break:break-all;
+    font-size:10px;
+    color:#8194a7;
+}
+
+.copyright{
+    max-width:1200px;
+    margin:45px auto 0;
+    padding-top:25px;
+    border-top:1px solid #173958;
+    font-size:11px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+
+    nav{
+        display:none;
+    }
+
+    .intro-grid,
+    .history-grid{
+        grid-template-columns:1fr;
+    }
+
+    .asset-grid{
+        grid-template-columns:1fr;
+    }
+
+    .president-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .data-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .govlinks{
+        display:none;
+    }
+
+    .brand-text h1{
+        font-size:22px;
+    }
+
+    .seal{
+        width:50px;
+        height:50px;
+        font-size:9px;
+    }
+
+    .hero-inner{
+        padding:90px 0;
+    }
+
+    .hero h2{
+        font-size:50px;
+    }
+
+    h2{
+        font-size:34px;
+    }
+
+    .president-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .president img{
+        height:210px;
+    }
+
+    .data-grid{
+        grid-template-columns:1fr;
+    }
+
+    .market-row{
+        grid-template-columns:1.5fr 1fr 1fr;
+        padding:15px;
+        font-size:12px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="govbar">
+    <span>TREASURY DIGITAL ASSET PROJECT</span>
+
+    <div class="govlinks">
+        <span>Stellar Network</span>
+        <span>Digital Assets</span>
+        <span>On-Chain Data</span>
+    </div>
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="header-main">
+
+    <div class="brand">
+
+        <div class="seal">
+            T
+        </div>
+
+        <div class="brand-text">
+            <h1>Treasury</h1>
+            <p>Digital Treasury Assets</p>
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="#about">About</a>
+        <a href="#assets">Assets</a>
+        <a href="#history">History</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#markets">Markets</a>
+        <a href="#data">Data Center</a>
+
+    </nav>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-inner">
+
+    <div class="hero-label">
+        Independent Stellar Digital Treasury Project
+    </div>
+
+    <h2>
+        Building a Digital Treasury Infrastructure.
+    </h2>
+
+    <p>
+        Treasury is an independent digital asset project built on the
+        Stellar network. The project brings together structured treasury
+        assets, transparent on-chain issuance and accessible market data
+        within one digital platform.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a class="btn btn-gold" href="#assets">
+            EXPLORE TREASURY ASSETS
+        </a>
+
+        <a class="btn btn-outline" href="#markets">
+            MARKET DATA
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="intro" id="about">
+
+<div class="intro-grid">
+
+<div>
+
+<div class="section-label">
+About Treasury
+</div>
+
+<h2>
+A Digital Treasury Built on Stellar
+</h2>
+
+<p>
+Treasury is designed as a digital infrastructure project for
+tokenized treasury-style assets. Its assets are issued on the
+Stellar blockchain and can be independently inspected through
+public blockchain data.
+</p>
+
+<br>
+
+<p>
+The project combines a dedicated issuer account, treasury asset
+management and an informational platform designed to make
+on-chain assets easier to understand and explore.
+</p>
+
+</div>
+
+
+<div class="factbox">
+
+<h3>Treasury at a Glance</h3>
+
+<div class="fact">
+<span>Network</span>
+<strong>Stellar</strong>
+</div>
+
+<div class="fact">
+<span>Assets</span>
+<strong>3</strong>
+</div>
+
+<div class="fact">
+<span>Issuer</span>
+<strong>Stellar Account</strong>
+</div>
+
+<div class="fact">
+<span>Platform</span>
+<strong>Digital Treasury</strong>
+</div>
+
+<div class="fact">
+<span>Verification</span>
+<strong>On-Chain</strong>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ASSETS -->
+
+<section class="assets" id="assets">
+
+<div class="assets-head">
+
+<div class="section-label">
+Treasury Digital Assets
+</div>
+
+<h2>Our Treasury Assets</h2>
+
+</div>
+
+
+<div class="asset-grid">
+
+
+<div class="asset-card">
+
+<div class="asset-number">TREASURY ASSET 01</div>
+
+<h3>Tnote1x</h3>
+
+<p>
+The first digital treasury asset issued through the Treasury
+Stellar infrastructure.
+</p>
+
+<div class="asset-info">
+
+Issuer:<br>
+
+GANSNG7S5WFEKHXEFY2QYCZUP6VSRLKKYRXJ63QMNXT4N5MXP2DLICD5
+
+</div>
+
+<a
+class="asset-btn"
+target="_blank"
+href="https://stellar.expert/explorer/public/asset/Tnote1x-GANSNG7S5WFEKHXEFY2QYCZUP6VSRLKKYRXJ63QMNXT4N5MXP2DLICD5">
+
+VIEW ON STELLAR EXPERT
+
+</a>
+
+</div>
+
+
+
+<div class="asset-card">
+
+<div class="asset-number">TREASURY ASSET 02</div>
+
+<h3>Tnote2x</h3>
+
+<p>
+The second digital treasury asset within the Treasury ecosystem.
+</p>
+
+<div class="asset-info">
+
+Issuer:<br>
+
+GANSNG7S5WFEKHXEFY2QYCZUP6VSRLKKYRXJ63QMNXT4N5MXP2DLICD5
+
+</div>
+
+<a
+class="asset-btn"
+target="_blank"
+href="https://stellar.expert/explorer/public/asset/Tnote2x-GANSNG7S5WFEKHXEFY2QYCZUP6VSRLKKYRXJ63QMNXT4N5MXP2DLICD5">
+
+VIEW ON STELLAR EXPERT
+
+</a>
+
+</div>
+
+
+
+<div class="asset-card">
+
+<div class="asset-number">TREASURY ASSET 03</div>
+
+<h3>Tnote3x</h3>
+
+<p>
+The third digital treasury asset completing the initial Treasury
+asset series.
+</p>
+
+<div class="asset-info">
+
+Issuer:<br>
+
+GANSNG7S5WFEKHXEFY2QYCZUP6VSRLKKYRXJ63QMNXT4N5MXP2DLICD5
+
+</div>
+
+<a
+class="asset-btn"
+target="_blank"
+href="https://stellar.expert/explorer/public/asset/Tnote3x-GANSNG7S5WFEKHXEFY2QYCZUP6VSRLKKYRXJ63QMNXT4N5MXP2DLICD5">
+
+VIEW ON STELLAR EXPERT
+
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- WASHINGTON -->
+
+<section class="symbol-section">
+
+<div class="symbol-inner">
+
+<div class="symbol-mark">
+TREASURY<br>
+1789<br>
+DIGITAL
+</div>
+
+<h2>
+The Treasury Tradition, Reimagined for the Digital Era
+</h2>
+
+<p>
+The visual language of this project draws inspiration from the
+historic financial architecture of Washington, D.C., including
+the monumental Treasury and White House environments. Treasury
+is independently operated and is not a U.S. government agency.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- HISTORY -->
+
+<section class="history" id="history">
+
+<div class="history-grid">
+
+<div>
+
+<div class="section-label">
+Treasury History
+</div>
+
+<h2>
+From Public Finance to Digital Assets
+</h2>
+
+<p style="line-height:1.9;color:#596774;">
+
+The United States Treasury Department was established in 1789.
+Alexander Hamilton became its first Secretary and helped establish
+the foundations of the country's federal financial system.
+
+Treasury's history includes the development of public credit,
+financial administration and the construction of the historic
+Treasury Building in Washington, D.C.
+
+</p>
+
+</div>
+
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<div class="timeline-year">1789</div>
+
+<h3>Department Established</h3>
+
+<p>
+The federal Department of the Treasury was established by Congress.
+</p>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-year">1789–1795</div>
+
+<h3>Alexander Hamilton</h3>
+
+<p>
+Hamilton served as the first Secretary of the Treasury and
+developed important foundations for federal financial policy.
+</p>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-year">WASHINGTON, D.C.</div>
+
+<h3>The Treasury Building</h3>
+
+<p>
+The historic Treasury Building became one of the defining
+architectural landmarks of America's financial institutions.
+</p>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-year">DIGITAL ERA</div>
+
+<h3>Stellar Infrastructure</h3>
+
+<p>
+Treasury brings the concept of structured treasury assets into
+a blockchain-native environment.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PRESIDENTS -->
+
+<section class="leadership" id="leadership">
+
+<div class="leadership-head">
+
+<div class="section-label">
+American History
+</div>
+
+<h2>
+Presidents & Financial History
+</h2>
+
+</div>
+
+
+<div class="president-grid">
+
+
+<div class="president">
+
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/George%20Washington%20Presidential%20Portrait.jpg">
+
+<div class="president-info">
+
+<h3>George Washington</h3>
+<span>1st President</span>
+
+</div>
+
+</div>
+
+
+<div class="president">
+
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Jefferson%20by%20Rembrandt%20Peale%2C%201808.jpg">
+
+<div class="president-info">
+
+<h3>Thomas Jefferson</h3>
+<span>3rd President</span>
+
+</div>
+
+</div>
+
+
+<div class="president">
+
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Abraham%20Lincoln%20O-77%20matte%20collodion%20print.jpg">
+
+<div class="president-info">
+
+<h3>Abraham Lincoln</h3>
+<span>16th President</span>
+
+</div>
+
+</div>
+
+
+<div class="president">
+
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Theodore%20Roosevelt%20Pach%20Brothers.jpg">
+
+<div class="president-info">
+
+<h3>Theodore Roosevelt</h3>
+<span>26th President</span>
+
+</div>
+
+</div>
+
+
+<div class="president">
+
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Official%20Portrait%20of%20President%20Reagan%201983.jpg">
+
+<div class="president-info">
+
+<h3>Ronald Reagan</h3>
+<span>40th President</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- MARKET -->
+
+<section class="market" id="markets">
+
+<div class="market-head">
+
+<div class="section-label">
+Digital Asset Markets
+</div>
+
+<h2>
+Cryptocurrency Market Data
+</h2>
+
+<p>
+Live market information supplied through a public cryptocurrency
+market-data API. Values update automatically.
+</p>
+
+</div>
+
+
+<div class="market-table">
+
+<div class="market-row head">
+
+<div>Asset</div>
+<div>Price</div>
+<div>24H</div>
+
+</div>
+
+
+<div id="crypto-list">
+
+<div class="market-row">
+<div>Loading market data...</div>
+<div>—</div>
+<div>—</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DATA CENTER -->
+
+<section class="data" id="data">
+
+<div style="max-width:1200px;margin:auto;">
